@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Sensibilidades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, red, black);
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background: #ffcc00;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: orange;
+    }
+    .resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Generador de Sensibilidades 🔥</h1>
+  <p>Selecciona tu dispositivo y genera tu sensibilidad modificada para dar <b>todo rojo</b> 🔥</p>
+
+  <label for="dispositivo">Elige tu dispositivo:</label>
+  <select id="dispositivo">
+    <option value="Infinix Hot 30">Infinix Hot 30</option>
+    <option value="Samsung">Samsung</option>
+    <option value="iPhone">iPhone</option>
+    <option value="Xiaomi">Xiaomi</option>
+    <option value="Huawei">Huawei</option>
+  </select>
+
+  <br>
+  <button onclick="generar()">Generar Sensibilidad</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function generar() {
+      let dispositivo = document.getElementById("dispositivo").value;
+      
+      // Números aleatorios para simular sensibilidades "modificadas"
+      let s1 = Math.floor(Math.random() * (200 - 100) + 100);
+      let s2 = Math.floor(Math.random() * (200 - 100) + 100);
+      let s3 = Math.floor(Math.random() * (200 - 100) + 100);
+
+      document.getElementById("resultado").innerHTML = 
+        `⚡ Sensibilidad ${dispositivo.toUpperCase()}: ${s1} / ${s2} / ${s3} 🔥🎯`;
+    }
+  </script>
+</body>
+</html>
